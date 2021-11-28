@@ -3,7 +3,12 @@ package com.papayankey.github
 import org.scalatest.flatspec.AnyFlatSpec
 
 class BlackjackSpec extends AnyFlatSpec {
-  "2 + 2" should "equal to 4" in {
-    assert(2 + 2 == 4)
+
+  "A card" should "be created given a suit and rank" in {
+    val expected = s"Card(Diamond, Jack)"
+    assertResult(expected) {
+      Card(Suit.Diamond, Rank.Jack).toString
+    }
   }
+
 }
