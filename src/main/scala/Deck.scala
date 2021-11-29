@@ -6,9 +6,10 @@ import scala.collection.mutable.Stack
 case class Deck(cards: Stack[Card])
 
 extension (d: Deck)
-  def initialize: Unit =
+  def initialize: Deck =
+    val stack = Stack[Card]()
     for {
       suit <- Suit.values
       rank <- Rank.values
-    } d.copy(cards = d.cards.push(Card(suit, rank)))
-
+    } stack.push(Card(suit, rank))
+    d.copy(cards = d.cards.concat(stack))    

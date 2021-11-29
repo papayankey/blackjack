@@ -16,9 +16,9 @@ class BlackjackSpec extends AnyFlatSpec {
   "A deck" should "be initialized with 52 combination of cards" in {
     val expected = 52
     assertResult(52) {
-      val deck = Deck(mutable.Stack[Card]())
-      deck.initialize
-      deck.cards.length
+      Deck(mutable.Stack[Card]())
+        .initialize
+        .cards.length
     }
   }
 
