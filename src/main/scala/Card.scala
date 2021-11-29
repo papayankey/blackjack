@@ -1,9 +1,7 @@
 package com.papayankey.github
 
-final case class Card(suit: Suit, rank: Rank) {
-  override def toString: String =
-    s"Card($suit, $rank)"
-}
+case class Card(suit: Suit, rank: Rank):
+  override def toString: String = s"Card($suit, $rank)"
 
 // Suit represents type of card
 enum Suit:
